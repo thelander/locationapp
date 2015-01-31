@@ -25,12 +25,9 @@ RSpec.configure do |config|
 
   config.before do
     example = RSpec.current_example
-    DatabaseCleaner.strategy = strategy
-    DatabaseCleaner.start
   end
 
   config.after do
     Capybara.reset_sessions!
-    DatabaseCleaner.clean
   end
 end
