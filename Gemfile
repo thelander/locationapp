@@ -12,6 +12,7 @@ gem "jquery-rails"
 gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "puma"
+gem "devise"
 
 group :development, :test do
   gem "byebug"
@@ -22,4 +23,6 @@ end
 group :test do
   gem "rspec-rails"
   gem "capybara"
+  gem "launchy"
+  gem "database_cleaner"
 end
