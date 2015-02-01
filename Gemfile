@@ -14,9 +14,10 @@ gem "jbuilder", "~> 2.0"
 gem "puma"
 gem "devise"
 gem "haml-rails", "~> 0.8"
+gem "bootstrap-sass", "~> 3.3.3"
 
 group :development, :test do
-  gem 'pry-rails'
+  gem "pry-rails"
   gem "byebug"
   gem "web-console", "~> 2.0"
   gem "spring"
