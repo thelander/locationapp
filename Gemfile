@@ -13,6 +13,7 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "puma"
 gem "devise"
+gem "haml-rails", "~> 0.8"
 
 group :development, :test do
   gem 'pry-rails'
