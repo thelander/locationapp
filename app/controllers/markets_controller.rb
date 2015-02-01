@@ -1,11 +1,35 @@
 class MarketsController < ApplicationController
-  before_action :set_markets
+  before_action :set_market, :set_markets
 
   def index
   end
 
+  def show
+  end
+
+  def new
+  end
+
+  def create
+    @market = Market.create market_params
+
+    if @market.save
+      redirect_to markets_path, notice: "Ny marknad skapad!"
+    else
+      redirect_to markets_path, alert: "Misslyckades med att skapa ny marknad!"
+    end
+  end
+
   private
+  def set_market
+    @market ||= params[:id].present? ? Market.find!(params[:id]) : Market.new
+  end
+
   def set_markets
     @markets ||= Market.all
+  end
+
+  def market_params
+    params.require(:market).permit :name, :description
   end
 end
