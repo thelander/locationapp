@@ -1,0 +1,13 @@
+<h1>Loppmarknad</h1>
+
+<p>♥ Gosen</p>
+
+<ul>
+  <% if signed_in? %>
+    <li>Inloggad som <%= current_user.email %></li>
+    <li><%= link_to "Logga ut", destroy_user_session_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to "Logga in", new_user_session_path %></li>
+    <li><%= link_to "Registrera", new_user_registration_path %></li>
+  <% end %>
+</ul>
