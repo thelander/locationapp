@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  resources :markets, path: "m"
-
   root "markets#index"
+
+  devise_for :users
+  resource :profile, only: :show
+  resources :markets, path: "m"
 end
