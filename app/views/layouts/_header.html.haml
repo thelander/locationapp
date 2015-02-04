@@ -5,9 +5,9 @@
 
 %ul{class: "nav nav-pills"}
   - if signed_in?
-    %li= link_to "Ny loppmarknad", "#"
     %li= link_to "Min profil", "#"
     %li= link_to "Logga ut", destroy_user_session_path, method: :delete
+    %li= link_to "Ny marknad", new_market_path
   - else
     %li= link_to "Logga in", new_user_session_path
     %li= link_to "Registrera", new_user_registration_path
