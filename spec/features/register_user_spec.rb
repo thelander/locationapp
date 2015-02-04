@@ -3,7 +3,7 @@ feature "register user" do
     visit root_path
   end
 
-  scenario "with valid data" do
+  scenario "with valid information" do
     click_link "Registrera"
     within ".registration" do
       fill_in "user_email", with: "test@mail.com"
@@ -15,7 +15,7 @@ feature "register user" do
     expect(page).to have_content "Welcome! You have signed up successfully"
   end
 
-  scenario "with invalid data" do
+  scenario "with invalid information" do
     click_link "Registrera"
     within ".registration" do
       fill_in "user_email", with: "test@mail.com"
