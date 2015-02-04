@@ -14,9 +14,9 @@ class MarketsController < ApplicationController
     @market = Market.create market_params
 
     if @market.save
-      redirect_to markets_path, notice: "Ny marknad skapad!"
+      redirect_to markets_path, notice: "Ny marknad skapad"
     else
-      redirect_to markets_path, alert: "Misslyckades med att skapa ny marknad!"
+      redirect_to markets_path, alert: "Skapa ny marknad misslyckades"
     end
   end
 
