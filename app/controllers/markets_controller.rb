@@ -1,5 +1,5 @@
 class MarketsController < ApplicationController
-  before_action :set_market, :set_markets
+  before_action :set_market, :set_markets, :set_comments
 
   def index
   end
@@ -22,11 +22,15 @@ class MarketsController < ApplicationController
 
   private
   def set_market
-    @market ||= params[:id].present? ? Market.find!(params[:id]) : Market.new
+    @market ||= params[:id].present? ? Market.find(params[:id]) : Market.new
   end
 
   def set_markets
     @markets ||= Market.all
+  end
+
+  def set_comments
+    @comments ||= @market.comments.by_date
   end
 
   def market_params

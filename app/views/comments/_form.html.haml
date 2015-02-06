@@ -1,0 +1,7 @@
+.comment-form
+  = form_for comment do |f|
+    .form-group
+      = f.text_area :content, class: "form-control"
+
+    .form-group
+      = f.submit "Skicka", class: "btn btn-default"
