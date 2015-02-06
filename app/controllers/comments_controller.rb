@@ -4,9 +4,14 @@ class CommentsController < ApplicationController
   def create
     @comment = @market.comments.new comment_params
     @comment.user = current_user
-    @comment.save!
+    
+    if @comment.save
+      flash[:notice] = "Din kommentar har skickats"
+    else
+      flash[:alert] = "Din kommentar är ogiltig"
+    end
 
-    redirect_to @market, notice: "Din kommentar har skickats"
+    redirect_to @market
   end
 
   def destroy
