@@ -8,7 +8,7 @@ feature "create market" do
 
   scenario "with valid information" do
     click_link "Ny marknad"
-    within ".new-market" do
+    within ".market-form" do
       fill_in :market_name, with: "Cool market"
       fill_in :market_description, with: "Description of cool market"
       click_button "Skapa marknad"
@@ -19,7 +19,7 @@ feature "create market" do
 
   scenario "with invalid information" do
     click_link "Ny marknad"
-    within ".new-market" do
+    within ".market-form" do
       fill_in :market_name, with: ""
       fill_in :market_description, with: ""
       click_button "Skapa marknad"
