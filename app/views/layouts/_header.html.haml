@@ -1,4 +1,4 @@
-%h1 Loppmarknad
+%h1= link_to "Loppmarknad", root_path
 
 - if signed_in?
   %p Inloggad som #{current_user.email} ♥ Gosen
