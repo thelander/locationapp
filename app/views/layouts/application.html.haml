@@ -13,10 +13,12 @@
       = render "layouts/header"
 
       - if notice.present?
-        %p.notice= notice
+        .alert.alert-success
+          %p= notice
 
       - if alert.present?
-        %p.alert= alert
+        .alert.alert-danger
+          %p= alert
 
       = yield
 
