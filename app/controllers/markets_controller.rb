@@ -23,15 +23,15 @@ class MarketsController < ApplicationController
 
   private
   def set_market
-    @market ||= params[:id].present? ? Market.find(params[:id]) : Market.new
+    @market = params[:id].present? ? Market.find(params[:id]) : Market.new unless @market
   end
 
   def set_markets
-    @markets ||= Market.all
+    @markets = Market.all unless @markets
   end
 
   def set_comments
-    @comments ||= @market.comments.by_date
+    @comments = @market.comments.by_date unless @comments
   end
 
   def set_rating

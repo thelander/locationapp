@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 
   private
   def set_market
-    @market ||= params[:market_id].present? ? Market.find(params[:market_id]) : Market.new
+    @market = Market.find params[:market_id] unless @market
   end
 
   def comment_params
