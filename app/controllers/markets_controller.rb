@@ -1,11 +1,10 @@
 class MarketsController < ApplicationController
-  before_action :set_market, :set_markets, :set_comments
+  before_action :set_market, :set_markets, :set_comments, :set_rating
 
   def index
   end
 
   def show
-    @rating = @market.ratings.new
   end
 
   def new
@@ -35,7 +34,8 @@ class MarketsController < ApplicationController
   end
 
   def set_rating
-    @rating ||= Rating.find_by(market: @market, user: current_user)
+    @rating = Rating.find_by market: @market, user: current_user unless @rating
+    @rating = Rating.create market: @market, user: current_user, score: 0 unless @rating
   end
 
   def market_params
