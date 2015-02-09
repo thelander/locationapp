@@ -15,6 +15,7 @@ gem "puma"
 gem "devise"
 gem "haml-rails", "~> 0.8"
 gem "bootstrap-sass", "~> 3.3.3"
+gem "jquery-raty-rails", github: "bmc/jquery-raty-rails"
 
 group :development, :test do
   gem "pry-rails"
