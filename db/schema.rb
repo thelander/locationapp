@@ -17,20 +17,25 @@ ActiveRecord::Schema.define(version: 20150209132537) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.text     "content"
     t.integer  "user_id"
     t.integer  "market_id"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "comments", ["market_id"], name: "index_comments_on_market_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
   create_table "markets", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.text     "description"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "markets", ["user_id"], name: "index_markets_on_user_id", using: :btree
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "market_id"
@@ -61,6 +66,9 @@ ActiveRecord::Schema.define(version: 20150209132537) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "markets"
+  add_foreign_key "comments", "users"
+  add_foreign_key "markets", "users"
   add_foreign_key "ratings", "markets"
   add_foreign_key "ratings", "users"
 end

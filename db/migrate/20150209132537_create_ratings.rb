@@ -7,7 +7,7 @@ class CreateRatings < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :ratings, :markets
     add_foreign_key :ratings, :users
+    add_foreign_key :ratings, :markets
   end
 end

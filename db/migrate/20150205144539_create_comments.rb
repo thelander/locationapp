@@ -1,11 +1,13 @@
 class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
+      t.references :user, index: true
+      t.references :market, index: true
       t.text :content
-      t.integer :user_id
-      t.integer :market_id
 
       t.timestamps
     end
+    add_foreign_key :comments, :users
+    add_foreign_key :comments, :markets
   end
 end
