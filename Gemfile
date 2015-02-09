@@ -21,7 +21,7 @@ group :development, :test do
   gem "pry-rails"
   gem "byebug"
   gem "web-console", "~> 2.0"
-  gem "spring"
+  gem "spring", "1.2.0"
 end
 
 group :test do
@@ -29,4 +29,5 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "database_cleaner"
+  gem "selenium-webdriver"
 end
