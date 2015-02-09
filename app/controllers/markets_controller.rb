@@ -5,6 +5,7 @@ class MarketsController < ApplicationController
   end
 
   def show
+    @rating = @market.ratings.new
   end
 
   def new
@@ -31,6 +32,10 @@ class MarketsController < ApplicationController
 
   def set_comments
     @comments ||= @market.comments.by_date
+  end
+
+  def set_rating
+    @rating ||= Rating.find_by(market: @market, user: current_user)
   end
 
   def market_params

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resource :profile, only: :show
   resources :markets, path: "m" do
     resources :comments, only: [:create, :destroy]
+    resources :ratings, only: :update
   end
 end

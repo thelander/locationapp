@@ -1,6 +1,12 @@
 %h1= @market.name
 %p= @market.description
 
+%p Omdöme
+#average-rating
+
+%p Lämna omdöme
+#user-rating
+
 %h2 Skriv kommentar
 = render "comments/form", comment: [@market, @market.comments.new]
 
