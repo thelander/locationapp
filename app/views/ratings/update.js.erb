@@ -1,17 +1,17 @@
 <script>
-  $('#average-rating').raty({
+  $("#average-rating").raty({
     readOnly: true,
     score: <%= @market.rating %>,
-    path: '/assets'
+    path: "/assets"
   });
 
-  $('#user-rating').raty({
+  $("#user-rating").raty({
     score: <%= @rating.score %>,
-    path: '/assets',
+    path: "/assets",
     click: function(score, evt) {
       $.ajax({
-        url: '/m/' + <%= @market.id %> + '/ratings/' + <%= @rating.id %>,
-        type: 'PATCH',
+        url: "<%= market_rating_path(@market, @rating) %>",
+        type: "PATCH",
         data: { score: score }
       }).done(function (data){});
     }
