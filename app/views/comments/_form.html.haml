@@ -1,5 +1,5 @@
 .comment-form
-  = form_for comment do |f|
+  = form_for [@market, @market.comments.new] do |f|
     .form-group
       = f.text_area :content, class: "form-control"
 
