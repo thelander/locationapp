@@ -14,10 +14,12 @@ class MarketsController < ApplicationController
     @market = Market.create market_params
 
     if @market.save
-      redirect_to markets_path, notice: "Ny marknad skapad"
+      flash[:notice] = "Ny marknad skapad"
     else
-      redirect_to markets_path, alert: "Skapa ny marknad misslyckades"
+      flash[:alert] = "Skapa ny marknad misslyckades"
     end
+
+    redirect_to markets_path
   end
 
   private
