@@ -5,5 +5,5 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :market
 
-  scope :by_date, -> { order(created_at: :asc) }
+  scope :by_date, -> { order created_at: :asc }
 end
