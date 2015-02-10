@@ -2,6 +2,8 @@ class RatingsController < ApplicationController
   before_action :set_market, :set_rating
 
   def update
+    authorize @rating
+
     if @rating.update score: params[:score]
       respond_to do |format|
         format.js
