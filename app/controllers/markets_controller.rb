@@ -31,7 +31,7 @@ class MarketsController < ApplicationController
   end
 
   def set_markets
-    @markets = Market.all unless @markets
+    @markets = Market.by_date unless @markets
   end
 
   def set_comments
