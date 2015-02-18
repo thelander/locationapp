@@ -1,7 +1,7 @@
 feature "rate market" do
   before do
-    user = User.create email: "test@mail.com", password: "password"
-    market = Market.create name: "Test market", description: "Description of test market"
+    user = User.create email: "user@test.com", password: "password"
+    market = Market.create name: "Market", description: "Market description"
 
     login user
     visit market_path market
@@ -14,7 +14,7 @@ feature "rate market" do
     expect(page).to have_selector "#rating img[title='bad']"
   end
 
-  scenario "with a good score", js: true do
+  scenario "with a great score", js: true do
     find("#rating > img:nth-child(5)").click
     reload
 

@@ -1,15 +1,14 @@
 %h1
   = @market.name.titleize
-  %span.small
-    #rating.pull-right
+  #rating.pull-right
 
-%h4 Beskrivning
-%p= @market.description
+%h5= @market.description
 
-%h4 Skriv kommentar
-= render "comments/form"
+%p
 
-%h4 Kommentarer
+%h3 Kommentarer
+- if signed_in?
+  = render "comments/form"
 = render @comments
 
 = render "ratings/update.js.erb"

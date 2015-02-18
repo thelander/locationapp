@@ -1,5 +1,7 @@
 .comment
-  %h4= link_to comment.user.email, "#"
-  %p= comment.content
-  %small= comment.created_at
+  %strong
+    = link_to comment.user.name, "#"
+  = comment.content
+  %p
+    %small.text-muted= comment.created_at
   %hr

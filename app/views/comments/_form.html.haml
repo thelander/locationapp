@@ -1,7 +1,7 @@
 .comment-form
   = form_for [@market, @market.comments.new] do |f|
     .form-group
-      = f.text_area :content, class: "form-control"
+      = f.text_area :content, placeholder: "Skriv en kommentar...", class: "form-control"
 
     .form-group
       = f.submit "Skicka", class: "btn btn-success"

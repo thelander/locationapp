@@ -1,7 +1,7 @@
 feature "create comment" do
   before do
-    user = User.create email: "test@mail.com", password: "password"
-    market = Market.create name: "Test market", description: "Description of test market"
+    user = User.create email: "user@test.com", password: "password"
+    market = Market.create name: "Market", description: "Market description"
 
     login user
     visit market_path market
@@ -9,7 +9,7 @@ feature "create comment" do
 
   scenario "with valid content" do
     within ".comment-form" do
-      fill_in :comment_content, with: "Cool comment"
+      fill_in :comment_content, with: "Comment content"
       click_button "Skicka"
     end
 
@@ -18,7 +18,7 @@ feature "create comment" do
 
   scenario "with invalid content" do
     within ".comment-form" do
-      fill_in :comment_content, with: "A"
+      fill_in :comment_content, with: "C"
       click_button "Skicka"
     end
 

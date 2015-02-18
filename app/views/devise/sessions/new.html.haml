@@ -1,5 +1,6 @@
-.session
-  %h2 Log in
+%h1 Logga in
+
+.session-form
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .form-group
       = f.label :email

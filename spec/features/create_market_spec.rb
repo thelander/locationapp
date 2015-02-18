@@ -1,6 +1,6 @@
 feature "create market" do
   before do
-    user = User.create email: "test@mail.com", password: "password"
+    user = User.create email: "user@test.com", password: "password"
 
     login user
     visit markets_path
@@ -9,8 +9,8 @@ feature "create market" do
   scenario "with valid information" do
     click_link "Ny marknad"
     within ".market-form" do
-      fill_in :market_name, with: "Cool market"
-      fill_in :market_description, with: "Description of cool market"
+      fill_in :market_name, with: "Market"
+      fill_in :market_description, with: "Market description"
       click_button "Skapa marknad"
     end
 
