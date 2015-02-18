@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
   def create
     @comment = @market.comments.new comment_params
     @comment.user = current_user
+
+    authorize @comment
     
     if @comment.save
       flash[:notice] = "Din kommentar har skickats"

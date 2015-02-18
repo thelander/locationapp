@@ -8,10 +8,13 @@ class MarketsController < ApplicationController
   end
 
   def new
+    authorize @market
   end
 
   def create
     @market = Market.create market_params
+
+    authorize @market
 
     if @market.save
       flash[:notice] = "Ny marknad skapad"
@@ -28,7 +31,7 @@ class MarketsController < ApplicationController
   end
 
   def set_markets
-    @markets = Market.all unless @markets
+    @markets = Market.by_date unless @markets
   end
 
   def set_comments
