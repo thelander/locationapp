@@ -33,3 +33,7 @@ group :test do
   gem "rspec-rails"
   gem "selenium-webdriver"
 end
+
+group :production do
+  gem "rails_12factor"
+end
