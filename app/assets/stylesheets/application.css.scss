@@ -1,9 +1,5 @@
-/*
- *= require_tree .
- *= require_self
- */
-
-@import "bootstrap-sprockets";
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+@import "bootswatch/paper/variables";
 @import "bootstrap";
 
 @media (min-width: 768px) {
@@ -11,3 +7,11 @@
     max-width: 730px;
   }
 }
+
+body {
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+@import "bootswatch/paper/bootswatch";
+@import "base";

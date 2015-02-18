@@ -9,15 +9,15 @@
     = csrf_meta_tags
 
   %body
-    .container
-      = render "layouts/header"
+    = render "layouts/nav"
 
+    .container
       - if notice.present?
-        .alert.alert-success
+        .alert.alert-success{:role => "alert"}
           %p= notice
 
       - if alert.present?
-        .alert.alert-danger
+        .alert.alert-danger{:role => "alert"}
           %p= alert
 
       = yield
