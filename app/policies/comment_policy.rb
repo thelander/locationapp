@@ -3,7 +3,7 @@ class CommentPolicy < ApplicationPolicy
     @user.present?
   end
 
-  def create?
+  def destroy?
     @user.present? and @record.user == @user
   end
 end
