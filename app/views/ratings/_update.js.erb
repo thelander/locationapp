@@ -1,7 +1,9 @@
 <script>
   $("#rating").raty({
     score: <%= @market.rating %>,
-    path: "/assets",
+    path: "..",
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
     click: function(score, evt) {
       $.ajax({
         url: "<%= market_rating_path(@market, @rating) %>",
@@ -11,3 +13,4 @@
     }
   });
 </script>
+
