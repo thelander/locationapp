@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
-@import "bootswatch/darkly/variables";
+@import "bootswatch/paper/variables";
 @import "bootstrap";
 
 @media (min-width: 768px) {
@@ -9,9 +9,9 @@
 }
 
 body {
-  font-family: "Droid Sans", sans-serif;
   padding-top: 80px;
   padding-bottom: 40px;
 }
 
-@import "bootswatch/darkly/bootswatch";
+@import "bootswatch/paper/bootswatch";
+@import "base";
