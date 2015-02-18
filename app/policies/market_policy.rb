@@ -1,6 +1,6 @@
 class MarketPolicy < ApplicationPolicy
   def new?
-    @user
+    @user.present?
   end
 
   def create?

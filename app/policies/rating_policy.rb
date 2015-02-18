@@ -1,5 +1,5 @@
 class RatingPolicy < ApplicationPolicy
   def update?
-    @user
+    @user.present?
   end
 end

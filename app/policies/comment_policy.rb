@@ -1,5 +1,9 @@
 class CommentPolicy < ApplicationPolicy
   def create?
-    @user
+    @user.present?
+  end
+
+  def create?
+    @user.present? and @record.user == @user
   end
 end
