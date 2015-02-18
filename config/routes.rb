@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "markets#index"
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
 
   resources :markets, path: "m" do
     resources :comments, path: "c", only: [:create, :destroy]
