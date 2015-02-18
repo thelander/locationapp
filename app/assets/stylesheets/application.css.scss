@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
-@import "bootswatch/paper/variables";
+@import "bootswatch/yeti/variables";
 @import "bootstrap";
 
 @media (min-width: 768px) {
@@ -13,5 +13,5 @@ body {
   padding-bottom: 40px;
 }
 
-@import "bootswatch/paper/bootswatch";
+@import "bootswatch/yeti/bootswatch";
 @import "base";
