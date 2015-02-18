@@ -8,16 +8,16 @@ feature "rate market" do
   end
 
   scenario "with a poor score", js: true do
-    find("#user-rating > img:nth-child(1)").click
+    find("#rating > img:nth-child(1)").click
     reload
 
-    expect(page).to have_selector "#average-rating img[title='bad']"
+    expect(page).to have_selector "#rating img[title='bad']"
   end
 
   scenario "with a good score", js: true do
-    find("#user-rating > img:nth-child(5)").click
+    find("#rating > img:nth-child(5)").click
     reload
 
-    expect(page).to have_selector "#average-rating img[title='gorgeous']"
+    expect(page).to have_selector "#rating img[title='gorgeous']"
   end
 end

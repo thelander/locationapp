@@ -1,18 +1,15 @@
 %h1
   = @market.name.titleize
   %span.small
-    #average-rating.pull-right
+    #rating.pull-right
 
 %h4 Beskrivning
 %p= @market.description
-
-%p Lämna omdöme
-#user-rating
-
-= render "ratings/update.js.erb"
 
 %h4 Skriv kommentar
 = render "comments/form"
 
 %h4 Kommentarer
 = render @comments
+
+= render "ratings/update.js.erb"

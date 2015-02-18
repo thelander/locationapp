@@ -1,12 +1,6 @@
 <script>
-  $("#average-rating").raty({
-    readOnly: true,
+  $("#rating").raty({
     score: <%= @market.rating %>,
-    path: "/assets"
-  });
-
-  $("#user-rating").raty({
-    score: <%= @rating.score %>,
     path: "/assets",
     click: function(score, evt) {
       $.ajax({
