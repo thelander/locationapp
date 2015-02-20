@@ -13,7 +13,7 @@ feature "log in user" do
       click_button "Logga in"
     end
 
-    expect(page).to have_content "Signed in successfully"
+    expect(page).to have_content "Loggade in"
   end
 
   scenario "with incorrect credentials" do
@@ -24,6 +24,6 @@ feature "log in user" do
       click_button "Logga in"
     end
 
-    expect(page).to have_content "Invalid email or password"
+    expect(page).to have_content "Ogiltig epost eller lösenord"
   end
 end

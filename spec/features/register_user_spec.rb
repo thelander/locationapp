@@ -14,7 +14,7 @@ feature "register user" do
       click_button "Registrera"
     end
 
-    expect(page).to have_content "Welcome! You have signed up successfully"
+    expect(page).to have_content "Välkommen! Ditt nya konto har skapats"
   end
 
   scenario "with invalid information" do
@@ -28,6 +28,6 @@ feature "register user" do
       click_button "Registrera"
     end
 
-    expect(page).to have_content "3 errors prohibited this user from being saved"
+    expect(page).to have_content "3 fel hindrade denna user från att sparas"
   end
 end
