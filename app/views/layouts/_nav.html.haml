@@ -19,3 +19,8 @@
             = link_to "Logga in", new_user_session_path
           %li
             = link_to "Registrera", new_user_registration_path
+
+      - if signed_in?
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to "Inloggad som #{current_user.name} @ #{request.location.city}", "#"
