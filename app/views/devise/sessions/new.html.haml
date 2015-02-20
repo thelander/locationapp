@@ -1,5 +1,7 @@
 %h1 Logga in
 
+%p= link_to "Logga in med Facebook", user_omniauth_authorize_path(:facebook)
+
 .session-form
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .form-group
