@@ -9,7 +9,7 @@
 .row
   .col-md-12
     %p= @market.description
-    %p Skogängsvägen 59, 163 41 Spånga
+    %p= @market.address
     %p Vi säljer böcker, kläder och möbler.
 
 .row
@@ -27,6 +27,7 @@
       %li Söndag 09:00-17:00
 
   .col-md-6
+    = image_tag "http://maps.google.com/maps/api/staticmap?size=400x400&sensor=false&zoom=16&markers=#{@market.latitude}%2C#{@market.longitude}"
     %p
       %strong Karta
 

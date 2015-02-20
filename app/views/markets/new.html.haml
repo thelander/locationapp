@@ -11,5 +11,9 @@
       = f.text_area :description, class: "form-control"
 
     .form-group
+      = f.label :address, "adress"
+      = f.text_field :address, placeholder: "Biblioteksgatan 100, 12345 Staden", class: "form-control"
+
+    .form-group
       = f.submit "Skapa marknad", class: "btn btn-success"
       = button_to "Avbryt", :back, class: "btn btn-danger"

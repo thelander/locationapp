@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218151135) do
+ActiveRecord::Schema.define(version: 20150220134735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "authentications", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "provider",   null: false
+    t.string   "uid",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authentications", ["user_id", "provider"], name: "index_authentications_on_user_id_and_provider", unique: true, using: :btree
+  add_index "authentications", ["user_id"], name: "index_authentications_on_user_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -33,6 +44,9 @@ ActiveRecord::Schema.define(version: 20150218151135) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "markets", ["user_id"], name: "index_markets_on_user_id", using: :btree
@@ -68,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150218151135) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "authentications", "users"
   add_foreign_key "comments", "markets"
   add_foreign_key "comments", "users"
   add_foreign_key "markets", "users"
