@@ -9,6 +9,10 @@ class Market < ActiveRecord::Base
 
   scope :by_date, -> { order created_at: :desc }
 
+  def comments
+    super.by_date
+  end
+
   def rating
     if ratings.present?
       ratings.sum(:score) / ratings.size

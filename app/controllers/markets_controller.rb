@@ -1,5 +1,5 @@
 class MarketsController < ApplicationController
-  before_action :set_market, :set_markets, :set_comments, :set_rating
+  before_action :set_market, :set_markets, :set_rating
 
   def index
   end
@@ -12,7 +12,7 @@ class MarketsController < ApplicationController
   end
 
   def create
-    @market = Market.create market_params
+    @market = Market.new(market_params)
 
     authorize @market
 
@@ -34,16 +34,13 @@ class MarketsController < ApplicationController
     @markets = Market.by_date unless @markets
   end
 
-  def set_comments
-    @comments = @market.comments.by_date unless @comments
-  end
-
   def set_rating
-    @rating = Rating.find_by market: @market, user: current_user unless @rating
-    @rating = Rating.create market: @market, user: current_user, score: 0 unless @rating
+    # todo: find_or_create_by
+    @rating = Rating.find_by(market: @market, user: current_user) unless @rating
+    @rating = Rating.create(market: @market, user: current_user, score: 0) unless @rating
   end
 
   def market_params
-    params.require(:market).permit :name, :description, :address
+    params.require(:market).permit(:name, :description, :address)
   end
 end
