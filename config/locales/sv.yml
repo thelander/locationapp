@@ -1,5 +1,6 @@
 sv:
   site: "Loppmarknad"
+  email: "epost"
   markets:
     created: "Din marknad har skapats" 
     alert: "Din marknad kunde inte skapas"

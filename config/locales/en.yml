@@ -1,5 +1,6 @@
 en:
   site: "Flea market"
+  email: "email"
   markets:
     created: "Your market has been created" 
     alert: "Your market could not be created"
