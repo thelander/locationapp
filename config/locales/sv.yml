@@ -1,6 +1,5 @@
 sv:
   site: "Loppmarknad"
-  email: "epost"
   markets:
     created: "Din marknad har skapats" 
     alert: "Din marknad kunde inte skapas"
@@ -23,10 +22,20 @@ sv:
     header: "Registrera dig"
     submit: "Registrera"
     cancel: "Avbryt"
+    firstname: "Förnamn"
+    lastname: "Efternamn"
+    email: "Epostadress"
+    password: "Lösenord"
+    password_confirmation: "Upprepa lösenord"
+    characters_minimum: "tecken minst"
   sessions:
     header: "Logga in"
     submit: "Logga in"
     cancel: "Avbryt"
+    email: "Epostaddress"
+    password: "Lösenord"
+    remember_me: "Kom ihåg mig"
+    facebook: "Logga in med ditt Facebook-konto"
   home:
     header: "Välkommen till Loppmarknad!"
     description: "Här listar vi alla Sveriges bästa loppmarknader, second hand-butiker och liknande."

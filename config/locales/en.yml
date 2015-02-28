@@ -1,6 +1,5 @@
 en:
   site: "Flea market"
-  email: "email"
   markets:
     created: "Your market has been created" 
     alert: "Your market could not be created"
@@ -23,10 +22,20 @@ en:
     header: "Register"
     submit: "Register"
     cancel: "Cancel"
+    firstname: "First name"
+    lastname: "Last name"
+    email: "Email address"
+    password: "Password"
+    password_confirmation: "Confirm password"
+    characters_minimum: "characters minimum"
   sessions:
     header: "Log in"
     submit: "Log in"
     cancel: "Cancel"
+    email: "Email address"
+    password: "Password"
+    remember_me: "Remember me"
+    facebook: "Log in using your Facebook account"
   home:
     header: "Welcome to flea market!"
     description: "This site lists all of Swedens best flea markets, second hand stores and the like."

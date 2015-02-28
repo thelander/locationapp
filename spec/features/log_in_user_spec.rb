@@ -24,6 +24,6 @@ feature "log in user" do
       click_button I18n.t("sessions.submit")
     end
 
-    expect(page).to have_content I18n.t("devise.failure.invalid", authentication_keys: I18n.t("email"))
+    expect(page).to have_content I18n.t("devise.failure.invalid", authentication_keys: I18n.t("sessions.email"))
   end
 end
