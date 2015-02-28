@@ -17,8 +17,6 @@ class RatingsController < ApplicationController
   end
 
   def set_rating
-    # todo: find_or_create_by
-    @rating = Rating.find_by(market: @market, user: current_user) unless @rating
-    @rating = Rating.create(market: @market, user: current_user, score: 0) unless @rating
+    @rating = Rating.find_or_create_by(market: @market, user: current_user) unless @rating
   end
 end
