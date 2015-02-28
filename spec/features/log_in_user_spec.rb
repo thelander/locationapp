@@ -6,24 +6,24 @@ feature "log in user" do
   end
 
   scenario "with correct credentials" do
-    click_link "Logga in"
+    click_link I18n.t("navigation.log_in")
     within ".session-form" do
       fill_in "user_email", with: "user@test.com"
       fill_in "user_password", with: "password"
-      click_button "Logga in"
+      click_button I18n.t("sessions.submit")
     end
 
-    expect(page).to have_content "Loggade in"
+    expect(page).to have_content I18n.t("devise.sessions.signed_in")
   end
 
   scenario "with incorrect credentials" do
-    click_link "Logga in"
+    click_link I18n.t("navigation.log_in")
     within ".session-form" do
       fill_in "user_email", with: "user@test.com"
       fill_in "user_password", with: "wrong_password"
-      click_button "Logga in"
+      click_button I18n.t("sessions.submit")
     end
 
-    expect(page).to have_content "Ogiltig epost eller lösenord"
+    expect(page).to have_content I18n.t("devise.failure.invalid")
   end
 end

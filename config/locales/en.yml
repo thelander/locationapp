@@ -1,23 +1,37 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  site: "Flea market"
+  markets:
+    created: "Your market has been created" 
+    alert: "Your market could not be created"
+    header_create: "Create new market"
+    name: "Name"
+    description: "Description"
+    address: "Address"
+    submit: "Create"
+    cancel: "Cancel"
+    placeholder: "Great Russell Street, London WC1B 3DG"
+    opening_hours: "Opening hours"
+    map: "Map"
+    comments: "Comments"
+  comments:
+    submit: "Send"
+    sent: "Your comment has been sent"
+    alert:  "Your comment is invalid"
+    placeholder: "Write a comment..."
+  registrations:
+    header: "Register"
+    submit: "Register"
+    cancel: "Cancel"
+  sessions:
+    header: "Log in"
+    submit: "Log in"
+    cancel: "Cancel"
+  home:
+    header: "Welcome to flea market!"
+    description: "This site lists all of Swedens best flea markets, second hand stores and the like."
+  navigation:
+    new_market: "New market"
+    log_out: "Log out"
+    log_in: "Log in"
+    register: "Register"
+    logged_in_as: "Logged in as %{name} @ %{location}"

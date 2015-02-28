@@ -1,0 +1,37 @@
+sv:
+  site: "Loppmarknad"
+  markets:
+    created: "Din marknad har skapats" 
+    alert: "Din marknad kunde inte skapas"
+    header_create: "Skapa ny marknad"
+    name: "Namn"
+    description: "Beskrivning"
+    address: "Adress"
+    submit: "Skapa"
+    cancel: "Avbryt"
+    placeholder: "Biblioteksgatan 100, 12345 Staden"
+    opening_hours: "Öppettider"
+    map: "Karta"
+    comments: "Kommentarer"
+  comments:
+    submit: "Skicka"
+    sent: "Din kommentar har skickats"
+    alert:  "Din kommentar är ogiltig"
+    placeholder: "Skriv en kommentar..."
+  registrations:
+    header: "Registrera dig"
+    submit: "Registrera"
+    cancel: "Avbryt"
+  sessions:
+    header: "Logga in"
+    submit: "Logga in"
+    cancel: "Avbryt"
+  home:
+    header: "Välkommen till Loppmarknad!"
+    description: "Här listar vi alla Sveriges bästa loppmarknader, second hand-butiker och liknande."
+  navigation:
+    new_market: "Ny marknad"
+    log_out: "Logga ut"
+    log_in: "Logga in"
+    register: "Registrera dig"
+    logged_in_as: "Inloggad som %{name} @ %{location}"

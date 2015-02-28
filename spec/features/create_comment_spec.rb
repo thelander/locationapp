@@ -10,18 +10,18 @@ feature "create comment" do
   scenario "with valid content" do
     within ".comment-form" do
       fill_in :comment_content, with: "Comment content"
-      click_button "Skicka"
+      click_button I18n.t("comments.submit")
     end
 
-    expect(page).to have_content "Din kommentar har skickats"
+    expect(page).to have_content I18n.t("comments.sent")
   end
 
   scenario "with invalid content" do
     within ".comment-form" do
       fill_in :comment_content, with: "C"
-      click_button "Skicka"
+      click_button I18n.t("comments.submit")
     end
 
-    expect(page).to have_content "Din kommentar är ogiltig"
+    expect(page).to have_content I18n.t("comments.alert")
   end
 end

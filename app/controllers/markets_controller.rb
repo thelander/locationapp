@@ -17,9 +17,9 @@ class MarketsController < ApplicationController
     authorize @market
 
     if @market.save
-      flash[:notice] = "Ny marknad skapad"
+      flash[:notice] = t("markets.created")
     else
-      flash[:alert] = "Skapa ny marknad misslyckades"
+      flash[:alert] = t("markets.alert")
     end
 
     redirect_to markets_path

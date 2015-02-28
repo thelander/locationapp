@@ -1,19 +1,19 @@
-%h1 Skapa ny marknad
+%h1= t("markets.header_create")
 
 .market-form
   = form_for @market do |f|
     .form-group
-      = f.label :name, "Namn"
+      = f.label :name, t("markets.name")
       = f.text_field :name, class: "form-control"
 
     .form-group
-      = f.label :description, "Beskrivning"
+      = f.label :description, t("markets.description")
       = f.text_area :description, class: "form-control"
 
     .form-group
-      = f.label :address, "adress"
-      = f.text_field :address, placeholder: "Biblioteksgatan 100, 12345 Staden", class: "form-control"
+      = f.label :address, t("markets.address")
+      = f.text_field :address, placeholder: t("markets.placeholder"), class: "form-control"
 
     .form-group
-      = f.submit "Skapa marknad", class: "btn btn-success"
-      = button_to "Avbryt", :back, class: "btn btn-danger"
+      = f.submit t("markets.submit"), class: "btn btn-success"
+      = button_to t("markets.cancel"), :back, class: "btn btn-danger"

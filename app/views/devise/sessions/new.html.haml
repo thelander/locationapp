@@ -1,4 +1,4 @@
-%h1 Logga in
+%h1= t("sessions.header")
 
 .session-form
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -16,5 +16,5 @@
         = f.label :remember_me
 
     .form-group
-      = f.submit "Logga in", class: "btn btn-success"
-      = button_to "Avbryt", :back, class: "btn btn-danger"
+      = f.submit t("sessions.submit"), class: "btn btn-success"
+      = button_to t("sessions.cancel"), :back, class: "btn btn-danger"

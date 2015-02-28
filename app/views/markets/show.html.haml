@@ -15,7 +15,7 @@
 .row
   .col-md-6
     %p
-      %strong Öppettider
+      %strong= t("markets.opening_hours")
     %p Pågår från 2015-02-10 till 2015-03-10
     %ul
       %li Måndag 09:00-17:00
@@ -28,12 +28,12 @@
 
   .col-md-6
     %p
-      %strong Karta
+      %strong= t("markets.map")
     = image_tag "http://maps.google.com/maps/api/staticmap?size=400x400&sensor=false&zoom=16&markers=#{@market.latitude}%2C#{@market.longitude}"
 
 .row
   .col-md-12
-    %h3 Kommentarer
+    %h3= t("markets.comments")
     - if signed_in?
       = render "comments/form"
     = render @comments

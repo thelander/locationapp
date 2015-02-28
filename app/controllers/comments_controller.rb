@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
     authorize @comment
     
     if @comment.save
-      flash[:notice] = "Din kommentar har skickats"
+      flash[:notice] = t("comments.sent")
     else
-      flash[:alert] = "Din kommentar är ogiltig"
+      flash[:alert] = t("comments.alert")
     end
 
     redirect_to @market

@@ -6,21 +6,21 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => root_path} Loppmarknad
+      %a.navbar-brand{:href => root_path}= t("site")
     #navbar.collapse.navbar-collapse
       %ul.nav.navbar-nav
         - if signed_in?
           %li
-            = link_to "Ny marknad", new_market_path
+            = link_to t("navigation.new_market"), new_market_path
           %li
-            = link_to "Logga ut", destroy_user_session_path, method: :delete
+            = link_to t("navigation.log_out"), destroy_user_session_path, method: :delete
         - else
           %li
-            = link_to "Logga in", new_user_session_path
+            = link_to t("navigation.log_in"), new_user_session_path
           %li
-            = link_to "Registrera", new_user_registration_path
+            = link_to t("navigation.register"), new_user_registration_path
 
       - if signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li
-            = link_to "Inloggad som #{current_user.name} @ #{request.location.city}", "#"
+            = link_to t("navigation.logged_in_as", name: current_user.name, location: request.location.city), "#"
