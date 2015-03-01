@@ -36,6 +36,7 @@ en:
     password: "Password"
     remember_me: "Remember me"
     facebook: "Log in using your Facebook account"
+    google: "Log in using your Google account"
   home:
     header: "Welcome to flea market!"
     description: "This site lists all of Swedens best flea markets, second hand stores and the like."

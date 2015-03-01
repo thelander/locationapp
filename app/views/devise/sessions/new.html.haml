@@ -1,6 +1,7 @@
 %h1= t("sessions.header")
 
 %p= link_to t("sessions.facebook"), user_omniauth_authorize_path(:facebook)
+%p= link_to t("sessions.google"), user_omniauth_authorize_path(:google_oauth2)
 
 .session-form
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
