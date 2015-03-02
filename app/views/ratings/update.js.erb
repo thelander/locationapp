@@ -1,4 +1,4 @@
-<script>
+
   $("#rating").raty({
     score: <%= @market.rating %>,
     path: "..",
@@ -6,11 +6,9 @@
     starOff: "<%= asset_path('star-off.png') %>",
     click: function(score, evt) {
       $.ajax({
-        url: "<%= market_rating_path(@market, @rating) %>",
+        url: "<%= market_rating_path(@market, @market.ratings.new) %>",
         type: "PATCH",
         data: { score: score }
       }).done(function (data){});
     }
   });
-</script>
-

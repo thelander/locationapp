@@ -4,7 +4,7 @@ class RatingsController < ApplicationController
   def update
     authorize @rating
 
-    if @rating.update score: params[:score]
+    if @rating.update(score: params[:score])
       respond_to do |format|
         format.js
       end
@@ -17,7 +17,6 @@ class RatingsController < ApplicationController
   end
 
   def set_rating
-    @rating = Rating.find_by market: @market, user: current_user unless @rating
-    @rating = Rating.create market: @market, user: current_user, score: 0 unless @rating
+    @rating = Rating.find_or_create_by(market: @market, user: current_user) unless @rating
   end
 end

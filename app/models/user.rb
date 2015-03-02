@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
-
   has_many :identities, dependent: :destroy
   has_many :ratings
 
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+
   def name
-    [firstname, lastname].join " "
+    [firstname, lastname].join(" ")
   end
 
   def self.find_or_create_from_omniauth(auth)
