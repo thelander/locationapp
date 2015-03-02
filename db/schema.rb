@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20150220134735) do
   add_index "comments", ["market_id"], name: "index_comments_on_market_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "identities", force: :cascade do |t|
+    t.string  "uid"
+    t.string  "provider"
+    t.integer "user_id"
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
   create_table "markets", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
@@ -66,8 +74,6 @@ ActiveRecord::Schema.define(version: 20150220134735) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
-    t.string   "provider"
-    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -75,6 +81,7 @@ ActiveRecord::Schema.define(version: 20150220134735) do
 
   add_foreign_key "comments", "markets"
   add_foreign_key "comments", "users"
+  add_foreign_key "identities", "users"
   add_foreign_key "markets", "users"
   add_foreign_key "ratings", "markets"
   add_foreign_key "ratings", "users"

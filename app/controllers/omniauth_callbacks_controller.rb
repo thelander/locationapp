@@ -1,26 +1,22 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    # You need to implement the method below in your model (e.g. app/models/user.rb)
-    @user = User.from_omniauth(request.env["omniauth.auth"])
-
-    if @user.persisted?
-      sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
-      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
-    else
-      session["devise.facebook_data"] = request.env["omniauth.auth"]
-      redirect_to new_user_registration_url
-    end
+    do_auth "facebook"
   end
 
-  def google
-    # You need to implement the method below in your model (e.g. app/models/user.rb)
-    @user = User.from_omniauth(request.env["omniauth.auth"])
+  def google_oauth2
+    do_auth "google"
+  end
+
+  private
+  def do_auth(auth)
+    @user = User.find_or_create_from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
-      sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
-      set_flash_message(:notice, :success, :kind => "Google") if is_navigational_format?
+      flash[:notice] = t("devise.omniauth_callbacks.success", kind: auth.titleize) if is_navigational_format?
+      sign_in_and_redirect @user, event: :authentication
     else
-      session["devise.google_data"] = request.env["omniauth.auth"]
+      flash[:alert] = t("devise.omniauth_callbacks.failure", kind: auth, reason: "unknown") if is_navigational_format?
+      session["devise.#{auth}_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
   end
