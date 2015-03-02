@@ -1,6 +1,5 @@
 class Market < ActiveRecord::Base
-  has_many :comments, dependent: :destroy
-  has_many :ratings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
@@ -9,15 +8,15 @@ class Market < ActiveRecord::Base
 
   scope :by_date, -> { order created_at: :desc }
 
-  def comments
+  def reviews
     super.by_date
   end
 
-  def rating
-    if ratings.present?
-      ratings.sum(:score) / ratings.size
+  def average_rating
+    if reviews.present?
+      reviews.sum(:rating).to_f / reviews.count
     else
-      0
+      0.0
     end
   end
 end

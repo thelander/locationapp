@@ -12,12 +12,13 @@ en:
     placeholder: "Great Russell Street, London WC1B 3DG"
     opening_hours: "Opening hours"
     map: "Map"
-    comments: "Comments"
-  comments:
+    reviews: "Reviews"
+  reviews:
     submit: "Send"
-    sent: "Your comment has been sent"
-    alert:  "Your comment is invalid"
-    placeholder: "Write a comment..."
+    sent: "Your review has been sent"
+    alert:  "Your review is invalid"
+    placeholder: "Write a review..."
+    rating: "Rating"
   registrations:
     header: "Register"
     submit: "Register"

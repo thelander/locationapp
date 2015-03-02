@@ -12,12 +12,13 @@ sv:
     placeholder: "Biblioteksgatan 100, 12345 Staden"
     opening_hours: "Öppettider"
     map: "Karta"
-    comments: "Kommentarer"
-  comments:
+    reviews: "Recensioner"
+  reviews:
     submit: "Skicka"
-    sent: "Din kommentar har skickats"
-    alert:  "Din kommentar är ogiltig"
-    placeholder: "Skriv en kommentar..."
+    sent: "Din recension har skickats"
+    alert:  "Din recension är ogiltig"
+    placeholder: "Skriv en recension..."
+    rating: "Omdöme"
   registrations:
     header: "Registrera dig"
     submit: "Registrera"

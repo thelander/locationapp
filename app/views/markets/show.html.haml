@@ -3,7 +3,7 @@
     %h1= @market.name.titleize
 
   .col-md-2
-    #rating
+    = number_field_tag :average_rating, @market.average_rating, class: "rating", data: { size: "xs", readonly: "readonly", show_clear: "false", show_caption: "false" }
 
 .row
   .col-md-12
@@ -32,9 +32,9 @@
 
 .row
   .col-md-12
-    %h3= t("markets.comments")
-    - if signed_in?
-      = render "comments/form"
-    = render @market.comments
+    %h3= t("markets.reviews")
 
-    = render "ratings/update.js.erb"
+    - if signed_in?
+      = render "reviews/form"
+
+    = render @market.reviews

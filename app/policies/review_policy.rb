@@ -1,4 +1,4 @@
-class CommentPolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
   def create?
     @user.present?
   end

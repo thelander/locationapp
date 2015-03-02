@@ -1,0 +1,8 @@
+.review-form
+  = form_for [@market, @market.reviews.new] do |f|
+    .form-group
+      = f.text_area :content, placeholder: t("reviews.placeholder"), class: "form-control"
+
+    .form-group
+      = f.number_field :rating, min: 1, max: 5, class: "rating", data: { size: "xs", show_clear: "false", show_caption: "false" }
+      = f.submit t("reviews.submit"), class: "btn btn-success"
