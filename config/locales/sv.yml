@@ -13,6 +13,7 @@ sv:
     opening_hours: "Öppettider"
     map: "Karta"
     reviews: "Recensioner"
+    average_rating: "%{average_rating} av %{count} recensenter"
   reviews:
     submit: "Skicka"
     sent: "Din recension har skickats"

@@ -13,6 +13,7 @@ en:
     opening_hours: "Opening hours"
     map: "Map"
     reviews: "Reviews"
+    average_rating: "%{average_rating} by %{count} reviewers"
   reviews:
     submit: "Send"
     sent: "Your review has been sent"
