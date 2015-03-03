@@ -1,10 +1,11 @@
 .row
-  .col-md-9
-    %h1= @market.name.titleize
+  .col-md-12
+    .pull-left
+      %h1= @market.name.titleize
 
-  .market-rating.col-md-3
-    = number_field_tag :average_rating, @market.average_rating, data: { min: 1, max: 5 }
-    %small.text-muted= t("markets.average_rating", average_rating: @market.average_rating, count: @market.reviews.count)
+    .market-rating.pull-right
+      = number_field_tag :average_rating, @market.average_rating, data: { min: 1, max: 5 }
+      %small.text-muted= t("markets.average_rating", average_rating: @market.average_rating, count: @market.reviews.count)
 
 .row
   .col-md-12
