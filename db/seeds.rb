@@ -49,7 +49,7 @@ markets = City.create([
   },
   {
     name: "Stockholms Stadsmissions second hand",
-    description: "Myrornas butik i Sundbyberg",
+    description: "Stadsmissionens second hand-butik",
     address: "Hornsgatan 58, 118 21 Stockholm"
   }
 ])
