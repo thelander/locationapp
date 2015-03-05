@@ -1,4 +1,4 @@
-markets = Market.create([
+Location.create([
   {
     name: "Myrorna Sundbyberg",
     description: "Myrornas butik i Sundbyberg",

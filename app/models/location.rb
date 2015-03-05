@@ -1,4 +1,4 @@
-class Market < ActiveRecord::Base
+class Location < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
 
   geocoded_by :address

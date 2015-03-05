@@ -11,7 +11,7 @@
       %ul.nav.navbar-nav
         - if signed_in?
           %li
-            = link_to t("navigation.new_market"), new_market_path
+            = link_to t("navigation.new_location"), new_location_path
           %li
             = link_to t("navigation.log_out"), destroy_user_session_path, method: :delete
         - else

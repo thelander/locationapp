@@ -1,11 +1,11 @@
 class HomeController < ApplicationController
-  before_action :set_markets
+  before_action :set_locations
 
   def index
   end
 
   private
-  def set_markets
-    @markets = Market.by_date unless @markets
+  def set_locations
+    @locations = Location.by_date unless @locations
   end
 end

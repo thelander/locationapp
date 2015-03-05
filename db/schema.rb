@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150220134735) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
-  create_table "markets", force: :cascade do |t|
+  create_table "locations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
     t.text     "description"
@@ -35,18 +35,18 @@ ActiveRecord::Schema.define(version: 20150220134735) do
     t.float    "longitude"
   end
 
-  add_index "markets", ["user_id"], name: "index_markets_on_user_id", using: :btree
+  add_index "locations", ["user_id"], name: "index_locations_on_user_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "market_id"
-    t.integer  "rating",     default: 0
+    t.integer  "location_id"
+    t.integer  "rating",      default: 0
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "reviews", ["market_id"], name: "index_reviews_on_market_id", using: :btree
+  add_index "reviews", ["location_id"], name: "index_reviews_on_location_id", using: :btree
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20150220134735) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "identities", "users"
-  add_foreign_key "markets", "users"
-  add_foreign_key "reviews", "markets"
+  add_foreign_key "locations", "users"
+  add_foreign_key "reviews", "locations"
   add_foreign_key "reviews", "users"
 end

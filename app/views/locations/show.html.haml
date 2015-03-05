@@ -1,0 +1,42 @@
+.row
+  .col-md-12
+    .pull-left
+      %h1= @location.name.titleize
+
+    .location-rating.pull-right
+      = number_field_tag :average_rating, @location.average_rating, data: { min: 1, max: 5 }
+      %small.text-muted= t("locations.average_rating", average_rating: @location.average_rating, count: @location.reviews.count)
+
+.row
+  .col-md-12
+    %p= @location.description
+    %p= @location.address
+    %p Vi säljer böcker, kläder och möbler.
+
+.row
+  .col-md-6
+    %p
+      %strong= t("locations.opening_hours")
+    %p Pågår från 2015-02-10 till 2015-03-10
+    %ul
+      %li Måndag 09:00-17:00
+      %li Tisdag 09:00-17:00
+      %li Onsdag 09:00-17:00
+      %li Torsdag 09:00-17:00
+      %li Fredag 09:00-17:00
+      %li Lördag 09:00-17:00
+      %li Söndag 09:00-17:00
+
+  .col-md-6
+    %p
+      %strong= t("locations.map")
+    = image_tag "http://maps.google.com/maps/api/staticmap?size=400x400&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"
+
+.row
+  .col-md-12
+    %h3= t("locations.reviews")
+
+    - if signed_in?
+      = render "reviews/form"
+
+    = render @location.reviews

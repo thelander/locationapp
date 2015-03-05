@@ -1,5 +1,5 @@
 .review-form
-  = form_for [@market, @market.reviews.new] do |f|
+  = form_for [@location, @location.reviews.new] do |f|
     .form-group
       = f.text_area :content, placeholder: t("reviews.placeholder"), class: "form-control"
 

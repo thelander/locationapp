@@ -1,0 +1,19 @@
+%h1= t("locations.header_create")
+
+.location-form
+  = form_for @location do |f|
+    .form-group
+      = f.label :name, t("locations.name")
+      = f.text_field :name, class: "form-control"
+
+    .form-group
+      = f.label :description, t("locations.description")
+      = f.text_area :description, class: "form-control"
+
+    .form-group
+      = f.label :address, t("locations.address")
+      = f.text_field :address, placeholder: t("locations.placeholder"), class: "form-control"
+
+    .form-group
+      = f.submit t("locations.submit"), class: "btn btn-success"
+      = button_to t("locations.cancel"), :back, class: "btn btn-danger"

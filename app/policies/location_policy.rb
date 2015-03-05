@@ -1,4 +1,4 @@
-class MarketPolicy < ApplicationPolicy
+class LocationPolicy < ApplicationPolicy
   def new?
     @user.present?
   end

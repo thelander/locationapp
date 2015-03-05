@@ -1,9 +1,9 @@
 sv:
-  site: "Loppmarknad"
-  markets:
-    created: "Din marknad har skapats" 
-    alert: "Din marknad kunde inte skapas"
-    header_create: "Skapa ny marknad"
+  site: "LocationApp"
+  locations:
+    created: "Din plats har skapats"
+    alert: "Din plats kunde inte skapas"
+    header_create: "Skapa ny plats"
     name: "Namn"
     description: "Beskrivning"
     address: "Adress"
@@ -40,10 +40,10 @@ sv:
     facebook: "Logga in med ditt Facebook-konto"
     google: "Logga in med ditt Google-konto"
   home:
-    header: "Välkommen till Loppmarknad!"
-    description: "Här listar vi alla Sveriges bästa loppmarknader, second hand-butiker och liknande."
+    header: "Välkommen till LocationApp!"
+    description: "Det här är en applikation för att lista och hitta fysiska platser."
   navigation:
-    new_market: "Ny marknad"
+    new_location: "Ny plats"
     log_out: "Logga ut"
     log_in: "Logga in"
     register: "Registrera dig"

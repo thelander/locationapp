@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
-  before_action :set_market
+  before_action :set_location
 
   def create
-    @review = @market.reviews.new(review_params)
+    @review = @location.reviews.new(review_params)
     @review.user = current_user
 
     authorize @review
@@ -13,15 +13,15 @@ class ReviewsController < ApplicationController
       flash[:alert] = t("reviews.alert")
     end
 
-    redirect_to @market
+    redirect_to @location
   end
 
   def destroy
   end
 
   private
-  def set_market
-    @market = Market.find(params[:market_id]) unless @market
+  def set_location
+    @location = Location.find(params[:location_id]) unless @location
   end
 
   def review_params

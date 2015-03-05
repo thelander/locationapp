@@ -1,9 +1,9 @@
 en:
-  site: "Flea market"
-  markets:
-    created: "Your market has been created" 
-    alert: "Your market could not be created"
-    header_create: "Create new market"
+  site: "LocationApp"
+  locations:
+    created: "Your location has been created"
+    alert: "Your location could not be created"
+    header_create: "Create new location"
     name: "Name"
     description: "Description"
     address: "Address"
@@ -40,10 +40,10 @@ en:
     facebook: "Log in using your Facebook account"
     google: "Log in using your Google account"
   home:
-    header: "Welcome to flea market!"
-    description: "This site lists all of Swedens best flea markets, second hand stores and the like."
+    header: "Welcome to LocationApp!"
+    description: "This is an application for listing and finding physical locations."
   navigation:
-    new_market: "New market"
+    new_location: "New location"
     log_out: "Log out"
     log_in: "Log in"
     register: "Register"

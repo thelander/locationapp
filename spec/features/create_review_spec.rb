@@ -1,10 +1,10 @@
 feature "create review" do
   before do
     user = User.create email: "user@test.com", password: "password"
-    market = Market.create name: "Market", description: "Market description"
+    location = Location.create name: "Location", description: "Location description"
 
     login user
-    visit market_path market
+    visit location_path location
   end
 
   scenario "with valid content" do

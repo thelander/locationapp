@@ -2,15 +2,15 @@ describe ReviewPolicy do
   permissions :create? do
     it "is permitted for users" do
       user = User.create email: "test@mail.com", password: "password"
-      market = Market.create name: "Test market", description: "Description of test market"
+      location = Location.create name: "Test location", description: "Description of test location"
 
-      expect(ReviewPolicy).to permit(user, market.reviews.new)
+      expect(ReviewPolicy).to permit(user, location.reviews.new)
     end
 
     it "is not permitted for guests" do
-      market = Market.create name: "Test market", description: "Description of test market"
+      location = Location.create name: "Test location", description: "Description of test location"
 
-      expect(ReviewPolicy).not_to permit(nil, market.reviews.new)
+      expect(ReviewPolicy).not_to permit(nil, location.reviews.new)
     end
   end
 

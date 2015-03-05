@@ -1,3 +1,3 @@
-# Loppmarknad
+# LocationApp
 
-Loppmarknad är en Ruby on Rails-applikation för att lista och hitta loppmarknader, second hand-butiker och liknande utifrån kategori och geografi.
+LocationApp is a Ruby on Rails application for listing and finding physical locations and sorting these on factors such as opening hours, geography, etc.
