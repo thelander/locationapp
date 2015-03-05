@@ -1,4 +1,4 @@
-%h1= t("home.header")
-%p= t("home.description")
+%h1= ENV["LOCATIONAPP_WELCOME"] || "LocationApp"
+%p= ENV["LOCATIONAPP_DESCRIPTION"] || "This is an application for listing and finding physical locations."
 
 = render @locations
