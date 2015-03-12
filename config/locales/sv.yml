@@ -1,5 +1,5 @@
 sv:
-  site: "LocationApp"
+  email: "e-post"
   locations:
     created: "Din plats har skapats"
     alert: "Din plats kunde inte skapas"

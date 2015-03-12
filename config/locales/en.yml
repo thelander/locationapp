@@ -1,5 +1,5 @@
 en:
-  site: "LocationApp"
+  email: "email"
   locations:
     created: "Your location has been created"
     alert: "Your location could not be created"

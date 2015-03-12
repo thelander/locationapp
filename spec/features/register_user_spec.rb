@@ -28,6 +28,6 @@ feature "register user" do
       click_button I18n.t("registrations.submit")
     end
 
-    expect(page).to have_content "3 fel hindrade denna user från att sparas"
+    expect(page).to have_content "3 errors prohibited this user from being saved"
   end
 end
