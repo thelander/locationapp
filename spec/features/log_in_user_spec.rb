@@ -1,6 +1,6 @@
 feature "log in user" do
   before do
-    User.create email: "user@test.com", password: "password"
+    User.create(email: "user@test.com", password: "password")
 
     visit root_path
   end
@@ -20,7 +20,7 @@ feature "log in user" do
     click_link I18n.t("navigation.log_in")
     within ".session-form" do
       fill_in "user_email", with: "user@test.com"
-      fill_in "user_password", with: "wrong_password"
+      fill_in "user_password", with: "incorrect"
       click_button I18n.t("sessions.submit")
     end
 

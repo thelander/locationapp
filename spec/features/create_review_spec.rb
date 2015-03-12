@@ -1,7 +1,7 @@
 feature "create review" do
   before do
-    user = User.create email: "user@test.com", password: "password"
-    location = Location.create name: "Location", description: "Description"
+    user = User.create(email: "user@test.com", password: "password")
+    location = Location.create(name: "Location", description: "Description")
 
     login user
     visit location_path location

@@ -23,11 +23,11 @@ feature "register user" do
       fill_in "user_firstname", with: ""
       fill_in "user_lastname", with: ""
       fill_in "user_email", with: "user"
-      fill_in "user_password", with: "pass"
-      fill_in "user_password_confirmation", with: "word"
+      fill_in "user_password", with: "password"
+      fill_in "user_password_confirmation", with: "confirmation"
       click_button I18n.t("registrations.submit")
     end
 
-    expect(page).to have_content "3 errors prohibited this user from being saved"
+    expect(page).to have_content "2 errors prohibited this user from being saved"
   end
 end

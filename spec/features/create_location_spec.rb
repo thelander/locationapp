@@ -1,6 +1,6 @@
 feature "create location" do
   before do
-    user = User.create email: "user@test.com", password: "password"
+    user = User.create(email: "user@test.com", password: "password")
 
     login user
     visit locations_path
@@ -10,7 +10,7 @@ feature "create location" do
     click_link I18n.t("navigation.new_location")
     within ".location-form" do
       fill_in :location_name, with: "Location"
-      fill_in :location_description, with: "Location description"
+      fill_in :location_description, with: "Description"
       click_button I18n.t("locations.submit")
     end
 
